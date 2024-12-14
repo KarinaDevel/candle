@@ -17,6 +17,7 @@ body {
         height: 90px;
         background-color: white;
         width: 100%;
+        z-index: 1000;
 
         h1 {
             font-size: 30px;
@@ -53,28 +54,56 @@ body {
     .orders {
         padding: 60px 200px;
 
-        ul {
+        .orders__content {
             display: flex;
             gap: 50px;
             flex-wrap: wrap;
+            position: relative;
 
             li {
                 display: flex;
                 flex-wrap: wrap;
+                flex-direction: column;
                 list-style-type: none;
                 flex: 1 1 calc(33.33% - 50px);
+                
+                box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
 
                 img {
+                    
+                    object-fit: cover;
+                    height: 100%;
                     width: 100%;
+                    
+                }
 
+            }
+
+            .wrapper {
+                .critaries {
+                    border: 2px solid grey;
+                    background-color: rgba(128, 128, 128, 0.103);
+                    padding: 30px;
+                    margin-bottom: 20px;
+                    position: absolute;
+                    width: 100%;
+                    top: 500px;
+                    
+                    left: 0;
+                    li{
+                        padding-top: 10px;
+                        box-shadow: none;
+                        
+                    }
+                    p{
+                        padding-right: 8px;
+                        font-weight: bold;
+                    }
                 }
             }
 
-            &:last-child {
-                justify-content: center;
-
-            }
         }
+
     }
 
     .footer {
@@ -84,19 +113,21 @@ body {
         flex: 1 1 50%;
         align-items: center;
         justify-content: center;
-        .left{
+
+        .left {
             .text {
                 font-size: 20px;
             }
-    
-            svg{
+
+            svg {
                 height: 30px;
                 width: 30px;
             }
-            
+
         }
-        }
-        .right{
-            margin-left: 200px;
-        }
+    }
+
+    .right {
+        margin-left: 200px;
+    }
 }
