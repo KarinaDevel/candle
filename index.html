@@ -13,6 +13,8 @@
     <section class="headbar">
         <h1>Seductive.Glow</h1>
         <ul>
+            <li id="">Log in</li>
+            <li><button class="sing-in" onclick="openSingIn()">Sing in</button></li>
             <li><a href="">About us</a></li>
             <li><button class="like" id="like">
                     <svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1"
@@ -41,27 +43,39 @@
                 </button>
             </li>
         </ul>
+        <div class="sing-in__container" id="singInContr">
+            <label>Name</label>
+            <input type="text" placeholder="name"
+            id="nameInp">
+            <label>Email</label>
+            <input type="email" placeholder="email" id="email">
+            <label>Password</label>
+            <input type="password" placeholder="password" id="password">
+            <button id="goIn" onclick="addUser()">Sing in</button>
+        </div>
     </section>
 
     <section class="orders">
         <ul class="orders__content">
-            <li><img src="imgs/1.JPG" alt="">
+            <li>
+                <img src="imgs/1.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="critaries">
+                        <li class="name" id="name"><p></p>Candle with Pheromones</li>
+                        <li class="price" id="price"><p></p> 480 Kč</li>
+                        <li class="descr" id="descr"><p></p>Your best assistant in getting pleasure. Light the candle - ignite the desire</li>
+                        <li class="color" id="color"><p>color:</p> red</li>
+                        <li class="scent" id="scent"><p>scent:</p>
+                            1: cherry + marzipan<br>
+                            2: Blackcurrant leaf <br>
+                            - Top note
+                            Freesia, May rose - Heart notes
+                            Woody accord, Patchouli, Vanilla - Base notes
+                        </li>
+                    </ul>
+                </div>
             </li>
-            <div class="wrapper">
-                <ul class="critaries">
-                    <li class="name" id="name"><p>name:</p>Candle with Pheromones</li>
-                    <li class="scent" id="scent"><p>scent:</p>
-                        1: cherry + marzipan<br>
-                        2: Blackcurrant leaf <br>
-                        - Top note
-                        Freesia, May rose - Heart notes
-                        Woody accord, Patchouli, Vanilla - Base notes
-                    </li>
-                    <li class="price" id="price"><p>price:</p> 480 Kč</li>
-                    <li class="color" id="color"><p>color:</p> red</li>
-                    <li class="descr" id="descr"><p>description:</p>Your best assistant in getting pleasure. Light the candle - ignite the desire</li>
-                </ul>
-            </div>
+            
             <li><img src="imgs/2.JPG" alt=""></li>
             <li><img src="imgs/3.JPG" alt=""></li>
             <li><img src="imgs/4.JPEG" alt=""></li>
@@ -98,6 +112,8 @@
         </div>
     </section>
 
+
+    <script src="index.js"></script>
 </body>
 
 </html>

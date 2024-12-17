@@ -17,7 +17,7 @@ body {
         height: 90px;
         background-color: white;
         width: 100%;
-        z-index: 1000;
+        z-index: 100;
 
         h1 {
             font-size: 30px;
@@ -28,10 +28,12 @@ body {
         ul {
             display: flex;
             list-style-type: none;
-            margin-left: 800px;
+            margin-left: 700px;
             gap: 30px;
 
             li {
+                cursor: pointer;
+
                 a {
                     text-decoration: none;
                     color: black;
@@ -49,53 +51,118 @@ body {
                 }
             }
         }
+
+        .sing-in__container {
+            border: 1px solid black;
+            background-color: white;
+            user-select: none;
+            color: black;
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+            left: 40%;
+            top: 300%;
+            border-radius: 30px;
+            padding: 20px 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            display: none;
+
+            label {
+                padding-top: 10px;
+                font-size: 16px;
+            }
+
+            input {
+                outline: 0;
+                border: 1px solid rgba(128, 128, 128, 0.41);
+            }
+
+            button {
+                margin-top: 15px;
+                padding: 5px 20px;
+                border-radius: 50px;
+                border: 1px solid gray;
+                cursor: pointer;
+            }
+        }
     }
 
     .orders {
         padding: 60px 200px;
 
         .orders__content {
-            display: flex;
-            gap: 50px;
-            flex-wrap: wrap;
-            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 80px;
 
             li {
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: column;
                 list-style-type: none;
-                flex: 1 1 calc(33.33% - 50px);
-                
+                width: 100%;
                 box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
 
-                img {
-                    
-                    object-fit: cover;
-                    height: 100%;
-                    width: 100%;
-                    
-                }
-
+                    img {
+                        object-fit: cover;
+                        height: auto;
+                        width: 100%;
+                    }
             }
 
             .wrapper {
+                max-width: 100%;
+                opacity: 1;
+                position: relative;
+                overflow: hidden;
+
                 .critaries {
-                    border: 2px solid grey;
-                    background-color: rgba(128, 128, 128, 0.103);
                     padding: 30px;
-                    margin-bottom: 20px;
-                    position: absolute;
-                    width: 100%;
-                    top: 500px;
-                    
-                    left: 0;
-                    li{
-                        padding-top: 10px;
-                        box-shadow: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    &:hover{
+                        .scent, .color{
+                                opacity: 1;
+                                visibility: visible;
+                        }
+                    }
+
+                    .name{
+                        font-weight: bold;
+                        font-size: 20px;
+                    }
+                    .price{
+                        color: rgba(128, 128, 128, 0.485);
+                        font-size: 20px;
+                        font-weight: bold;
                         
                     }
-                    p{
+                    .descr {
+                        
+                    }
+
+                    .color,
+                    .scent {
+                        opacity: 0;
+                        transition: opacity 0.5s ease;
+                        visibility: hidden;
+                       
+                    }
+
+                    li {
+                        box-shadow: none;
+                        margin-bottom: 10px;
+                        display: flex;
+                        justify-content: center;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    p {
                         padding-right: 8px;
                         font-weight: bold;
                     }
@@ -107,7 +174,7 @@ body {
     }
 
     .footer {
-        border-top: 1px solid rgba(128, 128, 128, 0.281);
+        border: 1px solid rgba(128, 128, 128, 0.223);
         padding: 30px 300px;
         display: flex;
         flex: 1 1 50%;
