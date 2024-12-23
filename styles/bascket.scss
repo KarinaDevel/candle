@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+$whole-text: "Cormonant Garamond";
+$main: "Cinzel";
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: $whole-text;
+}
+
+header {
+    h1 {
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+        margin-left: 100px;
+        font-family: $main;
+    }
+}
+
+.orders {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Это позволяет растянуть контейнер, чтобы кнопка была внизу */
+}
+
+.order {
+    border: 1px pink;
+    background-color: pink;
+    padding: 10px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .5s ease;
+    align-self: center; 
+    margin-top: auto;
+    &:hover {
+        background-color: rgb(203, 154, 162);
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center; /* Центрирует по горизонтали */
+    margin-top: auto; /* Гарантирует, что футер будет внизу */
+    width: 100%; /* Чтобы футер занимал всю ширину */
+    padding: 20px;
+}

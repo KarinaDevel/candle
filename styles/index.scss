@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+$whole-text: "Cormonant Garamond";
+$main: "Cinzel";
+
+body {
+    font-family: $whole-text;
+    background-color: white;
+    color: black;
+
+
+    header {
+        display: flex;
+        padding-top: 30px;
+        position: fixed;
+        top: 0;
+        height: 90px;
+        background-color: white;
+        width: 100%;
+        z-index: 100;
+
+        h1 {
+            font-size: 30px;
+            margin-left: 100px;
+            font-family: $main;
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            margin-left: 700px;
+            gap: 30px;
+
+            li {
+                cursor: pointer;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                    img{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                button {
+                    cursor: pointer;
+                    border: none;
+                    background-color: transparent;
+
+                    
+                }
+            }
+        }
+
+        form {
+            border: 1px solid black;
+            background-color: white;
+            user-select: none;
+            color: black;
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+            left: 40%;
+            top: 300%;
+            border-radius: 30px;
+            padding: 20px 100px;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            flex-direction: column;
+            display: none;
+
+            input {
+                outline: 0;
+                border: 1px solid rgba(128, 128, 128, 0.41);
+            }
+
+            button {
+                margin-top: 15px;
+                padding: 5px 20px;
+                border-radius: 50px;
+                border: 1px solid gray;
+                cursor: pointer;
+            }
+        }
+
+        .login__container {
+            display: none;
+
+        }
+    }
+
+    .orders {
+        padding: 60px 200px;
+
+        .orders__content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 80px;
+
+            li {
+                list-style-type: none;
+                width: 100%;
+                box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+                position: relative;
+
+                img {
+                    object-fit: cover;
+                    height: auto;
+                    width: 100%;
+                }
+            }
+
+            .wrapper {
+                max-width: 100%;
+                overflow: hidden;
+                padding: 30px;
+                position: absolute;
+                z-index: 1;
+                background-color: white;
+                box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+                max-height: 110px; /* Начальная высота */
+                transition: max-height 0.5s ease, opacity 0.5s ease;
+            
+                /* Убедитесь, что если содержимое маленькое, оно всё ещё видно */
+                &:hover {
+                    max-height: 1000px; /* Достаточно большое значение для анимации */
+                    opacity: 1; /* Полная видимость при наведении */
+                }
+            }
+                .criterias {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    margin-bottom: 10px;
+                    position: relative;
+                    overflow: hidden;
+                    opacity: 1;
+                    transition: height .5s ease, opacity 0.5s ease;
+                    
+                    li {
+                        box-shadow: none;
+                        margin-bottom: 10px;
+                        display: flex;
+                        justify-content: center;
+    
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                }
+
+                    .name {
+                        font-weight: bold;
+                        font-size: 20px;
+                    }
+
+                    .price {
+                        color: rgba(128, 128, 128, 0.485);
+                        font-size: 20px;
+                        font-weight: bold;
+
+                    }
+
+                    .descr {
+                        opacity: 1; /* Описание видно всегда */
+                        transition: opacity 0.5s ease;
+                    }
+
+                    .color, .scent {
+                        opacity: 0; /* Скрыто по умолчанию */
+                        transition: opacity 0.5s ease;
+                    }
+
+
+                    p {
+                        padding-right: 8px;
+                        font-weight: bold;
+                    }
+                }
+
+                .wrapper__btns {
+                    display: flex;
+                    justify-content: center;
+                    opacity: 0; /* Скрыто по умолчанию */
+                    transition: opacity 0.5s ease;
+                    gap: 40px;
+
+                    button {
+                        cursor: pointer;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+
+                    }
+
+                    .heart {
+                        width: 20px;
+                        height: 20px;
+                        transition: filter 0.3s ease;
+
+                        &:hover {
+                            filter: invert(24%) sepia(96%) saturate(7481%) hue-rotate(1deg) brightness(103%) contrast(101%);
+                        }
+                        &:active {
+                            filter: invert(24%) sepia(96%) saturate(7481%) hue-rotate(1deg) brightness(103%) contrast(101%);
+                        }
+                    }
+
+                    .bascket {
+                        border: 1px solid rgba(128, 128, 128, 0.395);
+                        padding: 5px 10px;
+                        border-radius: 10px;
+                        transition: .5s;
+
+                        &:hover {
+                            background-color: rgba(128, 128, 128, 0.486);
+                        }
+                    }
+                }
+                &:hover .criterias .color,
+                &:hover .criterias .scent,
+                &:hover .wrapper__btns {
+                    opacity: 1; /* Показываем скрытые элементы */
+                }
+    
+                /* При наведении на .wrapper появляется вся информация */
+                &:hover .criterias .descr,
+                &:hover .criterias .name,
+                &:hover .criterias .price {
+                    opacity: 1; /* Показываем описание, цену и название */
+                }
+
+            }
+        }
+    }
+
+    footer {
+        border: 1px solid rgba(128, 128, 128, 0.223);
+        padding: 30px 300px;
+        display: flex;
+        flex: 1 1 50%;
+        align-items: center;
+        justify-content: center;
+
+        .left {
+            .text {
+                font-size: 20px;
+            }
+
+            img {
+                height: 30px;
+                width: 30px;
+            }
+
+        }
+    }
+
+    .right {
+        margin-left: 200px;
+    }

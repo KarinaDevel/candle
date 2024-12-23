@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+$whole-text: "Cormonant Garamond";
+$main: "Cinzel";
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: $whole-text;
+}
+
+header {
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+        margin-left: 100px;
+        font-family: $main;
+    }
+}
+
+.favorites {
+    padding: 60px 200px;
+
+    .favorites__content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 80px;
+
+
+        li {
+            list-style-type: none;
+            width: 100%;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+
+            img {
+                object-fit: cover;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        .wrapper {
+            max-width: 100%;
+            overflow: hidden;
+            padding: 30px;
+            position: absolute;
+            z-index: 1;
+            background-color: white;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+            max-height: 110px; /* Начальная высота */
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+        
+            /* Убедитесь, что если содержимое маленькое, оно всё ещё видно */
+            &:hover {
+                max-height: 1000px; /* Достаточно большое значение для анимации */
+                opacity: 1; /* Полная видимость при наведении */
+            }
+        }
+
+            .criterias {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-bottom: 10px;
+                position: relative;
+                overflow: hidden;
+                opacity: 1;
+                transition: height .5s ease, opacity 0.5s ease;
+
+                li {
+                    box-shadow: none;
+                    margin-bottom: 10px;
+                    display: flex;
+                    justify-content: center;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .name {
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+
+                .price {
+                    color: rgba(128, 128, 128, 0.485);
+                    font-size: 20px;
+                    font-weight: bold;
+
+                }
+
+                .descr {
+                    opacity: 1;
+                    /* Описание видно всегда */
+                    transition: opacity 0.5s ease;
+                }
+
+                .color,
+                .scent {
+                    opacity: 0;
+                    /* Скрыто по умолчанию */
+                    transition: opacity 0.5s ease;
+                }
+
+
+                p {
+                    padding-right: 8px;
+                    font-weight: bold;
+                }
+            }
+
+            .wrapper__btns {
+                display: flex;
+                justify-content: center;
+                opacity: 0;
+                /* Скрыто по умолчанию */
+                transition: opacity 0.5s ease;
+                gap: 20px;
+
+                button {
+                    cursor: pointer;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+
+                }
+
+
+                .bascket, .remove-from-favorites {
+                    border: 1px solid rgba(128, 128, 128, 0.395);
+                    padding: 5px 10px;
+                    border-radius: 10px;
+                    transition: .5s;
+
+                    &:hover {
+                        background-color: rgba(128, 128, 128, 0.486);
+                    }
+                }
+            }
+
+            &:hover .criterias .color,
+            &:hover .criterias .scent,
+            &:hover .wrapper__btns {
+                opacity: 1;
+                /* Показываем скрытые элементы */
+            }
+
+            /* При наведении на .wrapper появляется вся информация */
+            &:hover .criterias .descr,
+            &:hover .criterias .name,
+            &:hover .criterias .price {
+                opacity: 1;
+                /* Показываем описание, цену и название */
+            }
+
+        }
+    }
+
+    
+
+
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    /* Центрирует по горизонтали */
+    margin-top: auto;
+    /* Гарантирует, что футер будет внизу */
+    width: 100%;
+    /* Чтобы футер занимал всю ширину */
+    padding: 20px;
+}
