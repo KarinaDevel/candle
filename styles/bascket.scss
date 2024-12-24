@@ -12,6 +12,7 @@ body {
 
 header {
     h1 {
+        padding-top: 30px;
         display: flex;
         justify-content: center;
         font-size: 30px;
@@ -24,7 +25,8 @@ header {
     width: 100%;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Это позволяет растянуть контейнер, чтобы кнопка была внизу */
+    // flex-grow: 1;
+    /* Это позволяет растянуть контейнер, чтобы кнопка была внизу */
 }
 
 .order {
@@ -34,17 +36,172 @@ header {
     border-radius: 20px;
     cursor: pointer;
     transition: .5s ease;
-    align-self: center; 
-    margin-top: auto;
+    align-self: center;
+    margin-top: 300px;
+
+    
+
     &:hover {
         background-color: rgb(203, 154, 162);
     }
 }
 
+    .orders {
+        padding: 60px 200px;
+        position: relative;
+
+        .orders__content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 80px;
+
+
+            li {
+                list-style-type: none;
+                width: 100%;
+                box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+                position: relative;
+                margin-top: 60px;
+
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            .wrapper {
+                width: 100%;
+                overflow: hidden;
+                padding: 30px;
+                position: absolute;
+                z-index: 1;
+                background-color: white;
+                box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+                max-height: 110px;
+                /* Начальная высота */
+                transition: max-height 0.5s ease, opacity 0.5s ease;
+
+                /* Убедитесь, что если содержимое маленькое, оно всё ещё видно */
+                &:hover {
+                    max-height: 1000px;
+                    /* Достаточно большое значение для анимации */
+                    opacity: 1;
+                    /* Полная видимость при наведении */
+                }
+            }
+
+            .criterias {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-bottom: 10px;
+                position: relative;
+                overflow: hidden;
+                opacity: 1;
+                transition: height .5s ease, opacity 0.5s ease;
+
+                li {
+                    box-shadow: none;
+                    margin-bottom: 10px;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 0;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .name {
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+
+                .price {
+                    color: rgba(128, 128, 128, 0.485);
+                    font-size: 20px;
+                    font-weight: bold;
+
+                }
+
+                .descr {
+                    opacity: 1;
+                    /* Описание видно всегда */
+                    transition: opacity 0.5s ease;
+                }
+
+                .color,
+                .scent {
+                    opacity: 0;
+                    /* Скрыто по умолчанию */
+                    transition: opacity 0.5s ease;
+                }
+
+
+                p {
+                    padding-right: 8px;
+                    font-weight: bold;
+                }
+            }
+
+            .wrapper__btns {
+                display: flex;
+                justify-content: center;
+                opacity: 0;
+                /* Скрыто по умолчанию */
+                transition: opacity 0.5s ease;
+                gap: 40px;
+
+                button {
+                    cursor: pointer;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+
+                }
+
+
+                .bascket,
+                .remove-from-basket {
+                    border: 1px solid rgba(128, 128, 128, 0.395);
+                    padding: 5px 10px;
+                    border-radius: 10px;
+                    transition: .5s;
+
+                    &:hover {
+                        background-color: rgba(128, 128, 128, 0.486);
+                    }
+                }
+            }
+
+            &:hover .criterias .color,
+            &:hover .criterias .scent,
+            &:hover .wrapper__btns {
+                opacity: 1;
+                /* Показываем скрытые элементы */
+            }
+
+            /* При наведении на .wrapper появляется вся информация */
+            &:hover .criterias .descr,
+            &:hover .criterias .name,
+            &:hover .criterias .price {
+                opacity: 1;
+                /* Показываем описание, цену и название */
+            }
+
+        }
+    }
+
 footer {
     display: flex;
-    justify-content: center; /* Центрирует по горизонтали */
-    margin-top: auto; /* Гарантирует, что футер будет внизу */
-    width: 100%; /* Чтобы футер занимал всю ширину */
+    justify-content: center;
+    
+    /* Центрирует по горизонтали */
+    margin-top: auto;
+    /* Гарантирует, что футер будет внизу */
+    width: 100%;
+    /* Чтобы футер занимал всю ширину */
     padding: 20px;
 }

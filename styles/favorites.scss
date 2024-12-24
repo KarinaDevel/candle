@@ -18,11 +18,12 @@ header {
         font-size: 30px;
         margin-left: 100px;
         font-family: $main;
+        padding-top: 30px;
     }
 }
 
 .favorites {
-    padding: 60px 200px;
+    padding: 30px 200px;
 
     .favorites__content {
         display: grid;
@@ -35,16 +36,17 @@ header {
             width: 100%;
             box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
             position: relative;
+            margin-top: 60px;
 
             img {
                 object-fit: cover;
-                height: auto;
+                height: 100%;
                 width: 100%;
             }
         }
 
         .wrapper {
-            max-width: 100%;
+            width: 100%;
             overflow: hidden;
             padding: 30px;
             position: absolute;
@@ -77,6 +79,7 @@ header {
                     margin-bottom: 10px;
                     display: flex;
                     justify-content: center;
+                    margin-top: 0;
 
                     &:last-child {
                         margin-bottom: 0;
@@ -121,7 +124,7 @@ header {
                 opacity: 0;
                 /* Скрыто по умолчанию */
                 transition: opacity 0.5s ease;
-                gap: 20px;
+                gap: 40px;
 
                 button {
                     cursor: pointer;
@@ -176,4 +179,5 @@ footer {
     width: 100%;
     /* Чтобы футер занимал всю ширину */
     padding: 20px;
+    padding-top: 300px;
 }

@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Если в избранном есть товары, отображаем их
     if (favorites.length > 0) {
+        // Очищаем список, чтобы не дублировались товары
+        favoritesList.innerHTML = "";
+
+        // Перебираем все товары в избранном
         favorites.forEach(product => {
             const li = document.createElement('li');
             li.classList.add('favorite-item');
@@ -26,11 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         <button class="remove-from-favorites" onclick="removeFromFavorites(this)">
                             Remove
                         </button>
-                        <button class="bascket">Add to orders</button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
                     </div>
                 </div>`;
 
-
+            // Добавляем товар в начало списка
             favoritesList.appendChild(li);
         });
     } else {
@@ -46,14 +50,14 @@ function removeFromFavorites(button) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     const index = favorites.findIndex(product => product.id === id);
 
-    const isProductInFavorites = favorites.some(product => product.id === id);
-
     if (index !== -1) {
-        favorites.splice(index, 1);  // Удаляем товар из массива
+        // Удаляем товар из массива
+        favorites.splice(index, 1);
         localStorage.setItem('favorites', JSON.stringify(favorites));
 
         // Убираем товар с экрана
         productElement.remove();
-        alert('Товар удален из избранного!');
+
+        alert('Product removed from favorites!');
     }
 }

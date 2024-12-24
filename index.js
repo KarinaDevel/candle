@@ -150,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+
 function addToFavorites(button) {
     const productElement = button.closest('li');
 
@@ -159,38 +160,40 @@ function addToFavorites(button) {
         return;  // Если элемент не найден, выходим из функции
     }
 
-    // Получаем индекс товара в списке
-    const allProducts = document.querySelectorAll('.orders__content li');
-    const productIndex = Array.from(allProducts).indexOf(productElement);
+    const heartIcon = button.querySelector('.heart');  // Иконка сердца
 
     // Генерируем уникальный id на основе временной метки
-    const id = `product-${Date.now()}`; 
+    const id = `product-${Date.now()}`;
 
     const name = productElement.querySelector('.name').textContent;
     const image = productElement.querySelector('img').getAttribute('src');
     const price = productElement.querySelector('.price').textContent;
     const descr = productElement.querySelector('.descr').textContent;
-    const color = productElement.querySelector('.color').textContent.split(':')[1].trim();
+    const color = productElement.querySelector('.color').textContent;
     const scent = productElement.querySelector('.scent').textContent.trim();
 
     // Получаем список избранных товаров из localStorage
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    favorites = favorites.filter(product => product && product.id); // Убираем пустые или некорректные товары
-
-    const heartIcon = button.querySelector('.heart-1');  // Иконка сердца
 
     // Проверяем, есть ли уже этот товар в избранном
     const isProductInFavorites = favorites.some(product => product.id === id);
 
+    // Если товар уже в избранном, не добавляем его снова и меняем цвет сердца на красный
+    if (heartIcon && heartIcon.src.includes("like-red.svg")) {
+        alert('This product is already in your favorites!');
+        return;  // Прерываем выполнение, чтобы товар не добавился снова
+    }
+
     if (!isProductInFavorites) {
-        // Товар еще не в избранном - добавляем его
-        favorites.push({ id, name, image, price, descr, color, scent });
+        // Товар еще не в избранном - добавляем его в начало массива
+        favorites.unshift({ id, name, image, price, descr, color, scent });
         localStorage.setItem('favorites', JSON.stringify(favorites));
 
         // Меняем цвет сердца на красный
         if (heartIcon) {
             heartIcon.src = "svgs/like-red.svg"; // Путь к изображению красного сердца
         }
+
         alert('Product added to favorites!');
     } else {
         // Товар уже в избранном - удаляем его
@@ -205,3 +208,5 @@ function addToFavorites(button) {
         alert('Product removed from favorites!');
     }
 }
+
+

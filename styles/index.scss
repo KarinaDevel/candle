@@ -102,16 +102,18 @@ body {
                 width: 100%;
                 box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
                 position: relative;
+                margin-top: 60px;
 
                 img {
                     object-fit: cover;
-                    height: auto;
+                    height: 100%;
                     width: 100%;
+                    
                 }
             }
 
             .wrapper {
-                max-width: 100%;
+                width: 100%;
                 overflow: hidden;
                 padding: 30px;
                 position: absolute;
@@ -124,7 +126,8 @@ body {
                 /* Убедитесь, что если содержимое маленькое, оно всё ещё видно */
                 &:hover {
                     max-height: 1000px; /* Достаточно большое значение для анимации */
-                    opacity: 1; /* Полная видимость при наведении */
+                    opacity: 1;
+                     
                 }
             }
                 .criterias {
@@ -143,6 +146,7 @@ body {
                         margin-bottom: 10px;
                         display: flex;
                         justify-content: center;
+                        margin-top: 0;
     
                         &:last-child {
                             margin-bottom: 0;
@@ -241,6 +245,8 @@ body {
         flex: 1 1 50%;
         align-items: center;
         justify-content: center;
+        margin-top: 300px;
+        gap: 200px;
 
         .left {
             .text {
@@ -251,10 +257,10 @@ body {
                 height: 30px;
                 width: 30px;
             }
-
+            .wrapper{
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
         }
-    }
-
-    .right {
-        margin-left: 200px;
     }
