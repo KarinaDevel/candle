@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             li.classList.add('favorite-item');
             li.dataset.id = product.id;  // Добавляем data-id для каждой позиции
 
-            li.innerHTML = `
+            li.innerHTML = ` 
                 <img src="${product.image}" alt="${product.name}">
                 <div class="wrapper">
                     <ul class="criterias">
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </button>
                         <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
                     </div>
-                </div>`;
+                </div>`; 
 
             // Добавляем товар в начало списка
             favoritesList.appendChild(li);

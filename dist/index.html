@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seductive.Glow</title>
+
+
+    <link rel="icon" href="/candle/assets/candle-6-svgrepo-com-aet_jzVe.svg" type="image/svg+xml">
+
+  <link rel="stylesheet" crossorigin href="/candle/assets/index-BUgNkJG7.css">
+</head>
+
+<body>
+    <header class="headbar">
+        <div class="burger-menu">
+            <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/menu--v1.png" alt="menu--v1"/>
+        </div>
+        <h1>Seductive.Glow</h1>
+        <ul>
+            <li id="">Log in</li>
+            <li><button class="sing-in" onclick="openSingIn()">Sing in</button></li>
+        </ul>
+
+        <form class="sing-in__container" id="singInContr">
+            <input type="text" placeholder="name" id="nameInp">
+            <input type="email" placeholder="email" id="email">
+            <input type="password" placeholder="password" id="password">
+            <button id="goIn" onclick="addUser()">Sing in</button>
+        </form>
+
+        <form class="login__container" id="loginForm">
+            <input type="email" placeholder="email" id="emailInpLogin">
+            <input type="password" placeholder="password" id="passwordInpLogin">
+            <button onclick="logIn()">Log in</button>
+        </form>
+    </header>
+
+    <section class="orders product-list">
+        <ul class="orders__content">
+            <li class="product">
+                <img src="/candle/assets/1-jtPKxGvS.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle with Pheromones
+                        </li>
+                        <li class="price">
+                            480 Kč
+                        </li>
+                        <li class="descr">
+                            Your best assistant in getting pleasure. Light the candle - ignite the desire
+                        </li>
+                        <li class="color">
+                            <p>color:</p> red
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            cherry + marzipan
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket"  onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product">
+                <img src="/candle/assets/1-jtPKxGvS.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle with Pheromones
+                        </li>
+                        <li class="price">
+                            480 Kč
+                        </li>
+                        <li class="descr">
+                            Your best assistant in getting pleasure. Light the candle - ignite the desire
+                        </li>
+                        <li class="color">
+                            <p>color:</p> red
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Blackcurrant leaf <br>
+                            - Top note
+                            Freesia, May rose - Heart notes
+                            Woody accord, Patchouli, Vanilla - Base notes
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+
+            <li class="product"><img src="/candle/assets/2-C05cTBhz.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle with Pheromones
+                        </li>
+                        <li class="price">
+                            450 Kč
+                        </li>
+                        <li class="descr">
+                            Your best assistant in getting pleasure. Light the candle - ignite the desire.
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Berries - Top note
+                            Merlot, spices
+                            
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product"><img src="/candle/assets/2-C05cTBhz.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle with Pheromones
+                        </li>
+                        <li class="price">
+                            450 Kč
+                        </li>
+                        <li class="descr">
+                            Your best assistant in getting pleasure. Light the candle - ignite the desire.
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Sweet Cherry - Top Note Blueberry, vanilla, coconut
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product"><img src="/candle/assets/2-C05cTBhz.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle with Pheromones
+                        </li>
+                        <li class="price">
+                            450 Kč
+                        </li>
+                        <li class="descr">
+                            Your best assistant in getting pleasure. Light the candle - ignite the desire.
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                           Licorice, Almond, Grape, and Red Apple - Top notes 
+                            Rose, Jasmine - Heart notes
+                            Honey, Patchouli, Sandalwood, Blackberry, Musk
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product"><img src="/candle/assets/3-BYLQ1i8v.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle with Pheromones
+                        </li>
+                        <li class="price">
+                            450 Kč
+                        </li>
+                        <li class="descr">
+                            Your best assistant in getting pleasure. Light the candle - ignite the desire.
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Berries - Top note Merlot, spices
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product"><img src="/candle/assets/3-BYLQ1i8v.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle with Pheromones
+                        </li>
+                        <li class="price">
+                            450 Kč
+                        </li>
+                        <li class="descr">
+                            Your best assistant in getting pleasure. Light the candle - ignite the desire.
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Sweet Cherry - Top Note Blueberry, vanilla, coconut
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product"><img src="/candle/assets/3-BYLQ1i8v.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle with Pheromones
+                        </li>
+                        <li class="price">
+                            450 Kč
+                        </li>
+                        <li class="descr">
+                            Your best assistant in getting pleasure. Light the candle - ignite the desire.
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Licorice, Almond, Grape, and Red Apple - Top notes
+                            Rose, Jasmine - Heart notes
+                            Honey, Patchouli, Sandalwood, Blackberry, Musk
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product"><img src="/candle/assets/4-BAlIIJ-b.JPEG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            White matte candle
+                        </li>
+                        <li class="price">
+                            320 Kc
+                        </li>
+                        <li class="descr">
+                            Made from natural wax
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Cherry + Marcipan
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product"><img src="/candle/assets/5-CItEvpyM.JPEG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Cozy gingerbread candle
+                        </li>
+                        <li class="price">
+                            Big size: 380 Kc
+                        </li>
+                        <li class="descr">
+
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Chocolate Brownie
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product">
+                <img src="/candle/assets/5-CItEvpyM.JPEG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Christmas Tree
+                        </li>
+                        <li class="price">
+                            Small size: 290 Kc
+                        </li>
+                        <li class="descr">
+
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white, green, red
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            orange + Christmas tree
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product"><img src="/candle/assets/6%D0%A1-BjyQeSAW.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Cozy gingerbread candle
+                        </li>
+                        <li class="price">
+                            180 Kc
+                        </li>
+                        <li class="descr">
+
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Chocolate Brownie
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product"><img src="/candle/assets/7-BWwL28GJ.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle
+                        </li>
+                        <li class="price">
+                            390 Kc
+                        </li>
+                        <li class="descr">
+                            Turn Heads. Break Hearts. Leave a Mark. Defy the Rules.
+                            With Seductive Glow, you're the irresistible force no one can ignore.
+                            It's more than a fragrance-it's your secret weapon.
+                            Be the one they can't stop talking about.
+                        </li>
+                        <li class="color">
+                            <p>color:</p>  Green, White, Red
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Light table fragrance - Jableny zavin
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product"><img src="/candle/assets/8-DVN49Owi.JPEG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Pheromones Perfume
+                        </li>
+                        <li class="price">
+                            1200 Kc
+                        </li>
+                        <li class="descr">
+                            Turn Heads. Break Hearts. Leave a Mark. Defy the Rules.
+                            With Seductive Glow, you're the irresistible force no one can ignore.
+                            It's more than a fragrance-it's your secret weapon.
+                            Be the one they can't stop talking about.
+                        </li>
+                        <li class="color">
+
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Lavender, Rose, Patchouli - TOP Notes
+                            Sandalwood, Orange - Heart Notes
+                            Vanilla, Musk
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product"><img src="/candle/assets/8-DVN49Owi.JPEG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Pheromones Perfume
+                        </li>
+                        <li class="price">
+                            1200 Kc
+                        </li>
+                        <li class="descr">
+                            Turn Heads. Break Hearts. Leave a Mark. Defy the Rules.
+                            With Seductive Glow, you're the irresistible force no one can ignore.
+                            It's more than a fragrance-it's your secret weapon.
+                            Be the one they can't stop talking about.
+                        </li>
+                        <li class="color">
+
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Cherry, Almond - TOP Notes
+                            Rose, Jasmine, Vanilla - Heart
+                            Notes
+                            Sandalwood, Cedar 
+                            BASE - coconut and palm oil with Pheromones
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product">
+                <img src="/candle/assets/9-CK0ErlFF.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle
+                        </li>
+                        <li class="price">
+                            180 Kc
+                        </li>
+                        <li class="descr">
+                            
+                        </li>
+                        <li class="color">
+                            <p>color:</p>  White, Green, Red
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Light table fragrance: strawberry milk
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product">
+                <img src="/candle/assets/10-DvSgA1ln.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            White Candle
+                        </li>
+                        <li class="price">
+                            220 Kc
+                        </li>
+                        <li class="descr">
+                            
+                        </li>
+                        <li class="color">
+                            <p>color:</p>  white
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Strawberry milk
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product">
+                <img src="/candle/assets/11-WZZ-4-8B.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            White Candle
+                        </li>
+                        <li class="price">
+                            250 Kc
+                        </li>
+                        <li class="descr">
+                            
+                        </li>
+                        <li class="color">
+                            <p>color:</p>  White, Green, Red
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Cappuccino
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="data:image/svg+xml,%3csvg%20fill='%23000000'%20height='800px'%20width='800px'%20version='1.1'%20id='Capa_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20viewBox='0%200%20471.701%20471.701'%20xml:space='preserve'%3e%3cg%3e%3cpath%20d='M433.601,67.001c-24.7-24.7-57.4-38.2-92.3-38.2s-67.7,13.6-92.4,38.3l-12.9,12.9l-13.1-13.1%20c-24.7-24.7-57.6-38.4-92.5-38.4c-34.8,0-67.6,13.6-92.2,38.2c-24.7,24.7-38.3,57.5-38.2,92.4c0,34.9,13.7,67.6,38.4,92.3%20l187.8,187.8c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-3.9l188.2-187.5c24.7-24.7,38.3-57.5,38.3-92.4%20C471.801,124.501,458.301,91.701,433.601,67.001z%20M414.401,232.701l-178.7,178l-178.3-178.3c-19.6-19.6-30.4-45.6-30.4-73.3%20s10.7-53.7,30.3-73.2c19.5-19.5,45.5-30.3,73.1-30.3c27.7,0,53.8,10.8,73.4,30.4l22.6,22.6c5.3,5.3,13.8,5.3,19.1,0l22.4-22.4%20c19.6-19.6,45.7-30.4,73.3-30.4c27.6,0,53.6,10.8,73.2,30.3c19.6,19.6,30.3,45.6,30.3,73.3%20C444.801,187.101,434.001,213.101,414.401,232.701z'%20/%3e%3c/g%3e%3c/svg%3e" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <div class="left">
+            <p class="text">More about us:</p>
+            <div class="wrapper">
+                <a href="https://www.tiktok.com/@seductive.glow?_t=ZN-8s9kpTVEhFe&_r=1">
+                    <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20x='0px'%20y='0px'%20width='100'%20height='100'%20viewBox='0%200%2048%2048'%3e%3cpath%20fill='%23212121'%20fill-rule='evenodd'%20d='M10.904,6h26.191C39.804,6,42,8.196,42,10.904v26.191%20C42,39.804,39.804,42,37.096,42H10.904C8.196,42,6,39.804,6,37.096V10.904C6,8.196,8.196,6,10.904,6z'%20clip-rule='evenodd'%3e%3c/path%3e%3cpath%20fill='%23ec407a'%20fill-rule='evenodd'%20d='M29.208,20.607c1.576,1.126,3.507,1.788,5.592,1.788v-4.011%20c-0.395,0-0.788-0.041-1.174-0.123v3.157c-2.085,0-4.015-0.663-5.592-1.788v8.184c0,4.094-3.321,7.413-7.417,7.413%20c-1.528,0-2.949-0.462-4.129-1.254c1.347,1.376,3.225,2.23,5.303,2.23c4.096,0,7.417-3.319,7.417-7.413L29.208,20.607L29.208,20.607%20z%20M30.657,16.561c-0.805-0.879-1.334-2.016-1.449-3.273v-0.516h-1.113C28.375,14.369,29.331,15.734,30.657,16.561L30.657,16.561z%20M19.079,30.832c-0.45-0.59-0.693-1.311-0.692-2.053c0-1.873,1.519-3.391,3.393-3.391c0.349,0,0.696,0.053,1.029,0.159v-4.1%20c-0.389-0.053-0.781-0.076-1.174-0.068v3.191c-0.333-0.106-0.68-0.159-1.03-0.159c-1.874,0-3.393,1.518-3.393,3.391%20C17.213,29.127,17.972,30.274,19.079,30.832z'%20clip-rule='evenodd'%3e%3c/path%3e%3cpath%20fill='%23fff'%20fill-rule='evenodd'%20d='M28.034,19.63c1.576,1.126,3.507,1.788,5.592,1.788v-3.157%20c-1.164-0.248-2.194-0.856-2.969-1.701c-1.326-0.827-2.281-2.191-2.561-3.788h-2.923v16.018c-0.007,1.867-1.523,3.379-3.393,3.379%20c-1.102,0-2.081-0.525-2.701-1.338c-1.107-0.558-1.866-1.705-1.866-3.029c0-1.873,1.519-3.391,3.393-3.391%20c0.359,0,0.705,0.056,1.03,0.159V21.38c-4.024,0.083-7.26,3.369-7.26,7.411c0,2.018,0.806,3.847,2.114,5.183%20c1.18,0.792,2.601,1.254,4.129,1.254c4.096,0,7.417-3.319,7.417-7.413L28.034,19.63L28.034,19.63z'%20clip-rule='evenodd'%3e%3c/path%3e%3cpath%20fill='%2381d4fa'%20fill-rule='evenodd'%20d='M33.626,18.262v-0.854c-1.05,0.002-2.078-0.292-2.969-0.848%20C31.445,17.423,32.483,18.018,33.626,18.262z%20M28.095,12.772c-0.027-0.153-0.047-0.306-0.061-0.461v-0.516h-4.036v16.019%20c-0.006,1.867-1.523,3.379-3.393,3.379c-0.549,0-1.067-0.13-1.526-0.362c0.62,0.813,1.599,1.338,2.701,1.338%20c1.87,0,3.386-1.512,3.393-3.379V12.772H28.095z%20M21.635,21.38v-0.909c-0.337-0.046-0.677-0.069-1.018-0.069%20c-4.097,0-7.417,3.319-7.417,7.413c0,2.567,1.305,4.829,3.288,6.159c-1.308-1.336-2.114-3.165-2.114-5.183%20C14.374,24.749,17.611,21.463,21.635,21.38z'%20clip-rule='evenodd'%3e%3c/path%3e%3c/svg%3e" alt="">
+                </a>
+                <a href="https://www.instagram.com/sglow.candles?igsh=MXg2emczZHZtd2dwOA%3D%3D">
+                    <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20x='0px'%20y='0px'%20width='100'%20height='100'%20viewBox='0%200%2048%2048'%3e%3cradialGradient%20id='yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1'%20cx='19.38'%20cy='42.035'%20r='44.899'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20offset='0'%20stop-color='%23fd5'%3e%3c/stop%3e%3cstop%20offset='.328'%20stop-color='%23ff543f'%3e%3c/stop%3e%3cstop%20offset='.348'%20stop-color='%23fc5245'%3e%3c/stop%3e%3cstop%20offset='.504'%20stop-color='%23e64771'%3e%3c/stop%3e%3cstop%20offset='.643'%20stop-color='%23d53e91'%3e%3c/stop%3e%3cstop%20offset='.761'%20stop-color='%23cc39a4'%3e%3c/stop%3e%3cstop%20offset='.841'%20stop-color='%23c837ab'%3e%3c/stop%3e%3c/radialGradient%3e%3cpath%20fill='url(%23yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)'%20d='M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20%20c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20%20C42.014,38.383,38.417,41.986,34.017,41.99z'%3e%3c/path%3e%3cradialGradient%20id='yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2'%20cx='11.786'%20cy='5.54'%20r='29.813'%20gradientTransform='matrix(1%200%200%20.6663%200%201.849)'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20offset='0'%20stop-color='%234168c9'%3e%3c/stop%3e%3cstop%20offset='.999'%20stop-color='%234168c9'%20stop-opacity='0'%3e%3c/stop%3e%3c/radialGradient%3e%3cpath%20fill='url(%23yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)'%20d='M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20%20c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20%20C42.014,38.383,38.417,41.986,34.017,41.99z'%3e%3c/path%3e%3cpath%20fill='%23fff'%20d='M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z%20M24,19c-2.757,0-5,2.243-5,5%20s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z'%3e%3c/path%3e%3ccircle%20cx='31.5'%20cy='16.5'%20r='1.5'%20fill='%23fff'%3e%3c/circle%3e%3cpath%20fill='%23fff'%20d='M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12%20C37,33.86,33.859,37,30,37z%20M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="right">
+            <p class="number">+420 bla bla bla</p>
+            <p class="firm">©«Seductive.Glow, 2025»</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="bascket.js"></script>
+    
+</body>
+</html>

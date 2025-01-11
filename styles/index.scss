@@ -3,21 +3,33 @@
 $whole-text: "Cormonant Garamond";
 $main: "Cinzel";
 
+
+@import url('media-index.scss');
+@import url('null.scss');
+@import url('favorites.scss');
+@import url('null.scss');
+@import url('bascket.scss');
+@import url('index.scss');
+
 body {
     font-family: $whole-text;
     background-color: white;
     color: black;
-
+}
 
     header {
         display: flex;
-        padding-top: 30px;
+        align-items: center;
         position: fixed;
         top: 0;
-        height: 90px;
+        height: 100px;
         background-color: white;
         width: 100%;
         z-index: 100;
+
+        .burger-menu{
+            display: none;
+        }
 
         h1 {
             font-size: 30px;
@@ -26,6 +38,7 @@ body {
         }
 
         ul {
+            padding-top: 30px;
             display: flex;
             list-style-type: none;
             margin-left: 700px;
@@ -40,6 +53,12 @@ body {
                     img{
                         width: 20px;
                         height: 20px;
+                    }
+                }
+                p{
+                    display: none;
+                    @media (min-width: 325px) and (max-width: 768px){
+                        display: block;
                     }
                 }
 
@@ -65,21 +84,25 @@ body {
             padding: 20px 100px;
             justify-content: center;
             align-items: center;
-            position: absolute;
             flex-direction: column;
+            position: absolute;
             display: none;
+            box-shadow: 1000px 1000px 30px rgba(0, 0, 0, 0.7), 0 0 60px rgba(0, 0, 0, 0.5);
 
             input {
                 outline: 0;
                 border: 1px solid rgba(128, 128, 128, 0.41);
+                margin-bottom: 15px;
+                border-radius: 10px;
+                padding-left: 10px;
             }
 
             button {
-                margin-top: 15px;
-                padding: 5px 20px;
-                border-radius: 50px;
+                padding: 2.5px 20px;
+                border-radius: 10px;
                 border: 1px solid gray;
                 cursor: pointer;
+                font-weight: bold;
             }
         }
 
@@ -129,6 +152,19 @@ body {
                     opacity: 1;
                      
                 }
+
+                @media (min-width: 1025px) and (max-width: 1440px){
+                    padding: 15px;
+                    max-height: 90px;
+                }
+
+                @media (min-width: 768px) and (max-width: 1024px){
+                    box-shadow: none;
+                    max-height: 100%;
+                    overflow: visible;
+                    
+
+                }
             }
                 .criterias {
                     display: flex;
@@ -156,6 +192,11 @@ body {
                     .name {
                         font-weight: bold;
                         font-size: 20px;
+                        text-align: center;
+                        @media (min-width: 768px) and (max-width: 1024px){
+                            min-width: 100%;
+                            font-size: 18px;
+                        }
                     }
 
                     .price {
@@ -173,6 +214,10 @@ body {
                     .color, .scent {
                         opacity: 0; /* Скрыто по умолчанию */
                         transition: opacity 0.5s ease;
+
+                        @media (min-width: 768px) and (max-width: 1024px){
+                            opacity: 1;
+                        }
                     }
 
 
@@ -195,6 +240,10 @@ body {
                         border: none;
                         outline: none;
 
+                    }
+                    @media (min-width: 768px) and (max-width: 1024px){
+                        opacity: 1;
+                        gap: 15px;
                     }
 
                     .heart {
@@ -236,7 +285,7 @@ body {
 
             }
         }
-    }
+    
 
     footer {
         border: 1px solid rgba(128, 128, 128, 0.223);

@@ -8,7 +8,7 @@ if (localStorage.getItem("users")) {
 const loggedInContainer = document.querySelector(".headbar ul");
 
 // Логика для открытия формы регистрации
-let singInWind; 
+let singInWind;
 let loginForm;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Логика для открытия формы регистрации
 function openSingIn() {
-    singInWind.style.display = "block";
+    singInWind.style.display = "flex";
     loginForm.style.display = "none"; // Закрыть форму входа, если открывается регистрация
 }
 
 // Логика для открытия формы логина
 function openLogInForm() {
-    loginForm.style.display = "block";
+    loginForm.style.display = "flex";
     singInWind.style.display = "none"; // Закрыть форму регистрации, если открывается логин
 }
 
@@ -111,13 +111,17 @@ function updateUIAfterLogin(user) {
         loggedInContainer.innerHTML = `
             <li><button onclick="logOut()">Log out</button></li>
             <li><a href="favorites.html" class="like" id="like">
+                    <p>Favorites</p>
                     <img src="svgs/like.svg" alt="like">
                 </a>
+                
             </li>
             <li>
-                <a href="bascket.html" class="order" id="order">
+                <a href="bascket.html" class="order-bascket" id="order-bascket">
+                    <p>Orders</p>
                     <img src="svgs/bascket.svg" alt="bascket">
                 </a>
+                
             </li>
         `;
     }
@@ -152,12 +156,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function addToFavorites(button) {
+    // Проверка, если пользователь не авторизован
+    const currentUser = localStorage.getItem("currentUser");
+    if (!currentUser) {
+        alert("Please log in to add products to favorites.");
+        return; // Прерываем выполнение, если пользователь не авторизован
+    }
+
     const productElement = button.closest('li');
 
     // Проверяем, что элемент был найден
     if (!productElement) {
         console.error("Product element not found!");
-        return;  // Если элемент не найден, выходим из функции
+        return;
     }
 
     const heartIcon = button.querySelector('.heart');  // Иконка сердца
@@ -176,9 +187,8 @@ function addToFavorites(button) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
     // Проверяем, есть ли уже этот товар в избранном
-    const isProductInFavorites = favorites.some(product => product.id === id);
+    const isProductInFavorites = favorites.some(product => product.name === name && product.price === price);
 
-    // Если товар уже в избранном, не добавляем его снова и меняем цвет сердца на красный
     if (heartIcon && heartIcon.src.includes("like-red.svg")) {
         alert('This product is already in your favorites!');
         return;  // Прерываем выполнение, чтобы товар не добавился снова
@@ -197,7 +207,7 @@ function addToFavorites(button) {
         alert('Product added to favorites!');
     } else {
         // Товар уже в избранном - удаляем его
-        favorites = favorites.filter(product => product.id !== id); // Удаляем товар по id
+        favorites = favorites.filter(product => product.name !== name || product.price !== price); // Удаляем товар по имени и цене
         localStorage.setItem('favorites', JSON.stringify(favorites));
 
         // Меняем цвет сердца на обычный
@@ -208,5 +218,54 @@ function addToFavorites(button) {
         alert('Product removed from favorites!');
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Получаем список избранных товаров из localStorage
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    // Находим все кнопки "like" на странице
+    const likeButtons = document.querySelectorAll('.like');
+
+    likeButtons.forEach(button => {
+        const productElement = button.closest('li');
+        const heartIcon = button.querySelector('.heart');  // Иконка сердца
+
+        // Проверяем, что найден productElement и heartIcon
+        if (!productElement || !heartIcon) {
+            return;  // Если одного из элементов нет, пропускаем итерацию
+        }
+
+        // Получаем информацию о товаре, проверяя наличие каждого элемента
+        const nameElement = productElement.querySelector('.name');
+        const priceElement = productElement.querySelector('.price');
+        const descrElement = productElement.querySelector('.descr');
+        const colorElement = productElement.querySelector('.color');
+        const scentElement = productElement.querySelector('.scent');
+
+        // Проверяем, что все необходимые элементы существуют
+        if (!nameElement || !priceElement || !descrElement || !colorElement || !scentElement) {
+            console.error("One or more product details are missing");
+            return;
+        }
+
+        const name = nameElement.textContent;
+        const price = priceElement.textContent;
+        const descr = descrElement.textContent;
+        const color = colorElement.textContent;
+        const scent = scentElement.textContent.trim();
+
+        // Теперь проверяем наличие всех параметров товара, включая запах
+        const isProductInFavorites = favorites.some(product =>
+            product.name === name &&
+            product.price === price &&
+            product.scent === scent // Добавляем запах в проверку
+        );
+
+        // Если товар в избранном, меняем цвет сердца на красный
+        if (isProductInFavorites) {
+            heartIcon.src = "svgs/like-red.svg";  // Меняем на красное сердце
+        }
+    });
+});
 
 
