@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seductive.Glow</title>
+    <link rel="stylesheet" href="styles/index.scss">
+    <link rel="stylesheet" href="styles/null.scss">
+    <link rel="icon" href="svgs/candle-6-svgrepo-com.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles/media-index.scss">
+</head>
+
+<body>
+    <header class="headbar">
+        <div class="burger-menu" id="burger-menu">
+            <img src="./svgs/hamburger-menu-svgrepo-com.svg" alt="">
+        </div>
+        <h1>Seductive.Glow</h1>
+    <div id="menu">
+        <ul>
+            <li id="">Log in</li>
+            <li><button class="sing-in" onclick="openSingIn()">Sing in</button></li>
+        </ul>
+    </div>
+        <form class="sing-in__container" id="singInContr">
+            <input type="text" placeholder="name" id="nameInp">
+            <input type="email" placeholder="email" id="email">
+            <input type="password" placeholder="password" id="password">
+            <button id="goIn" onclick="addUser()">Sing in</button>
+        </form>
+
+        <form class="login__container" id="loginForm">
+            <input type="email" placeholder="email" id="emailInpLogin">
+            <input type="password" placeholder="password" id="passwordInpLogin">
+            <button onclick="logIn()">Log in</button>
+        </form>
+    </header>
+
+    <section class="orders product-list">
+        <ul class="orders__content">
+            <li class="product">
+                <img src="imgs/1.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle with Pheromones
+                        </li>
+                        <li class="price">
+                            480 Kč
+                        </li>
+                        <li class="descr">
+                            Your best assistant in getting pleasure. Light the candle - ignite the desire
+                        </li>
+                        <li class="color">
+                            <p>color:</p> red
+                        </li>
+                        <li class="scent">
+                            <label>scent:</label>
+                            <div class="custom-select" id="customSelect">
+                                <p id="selectedOption">Выберите опцию</p>
+                                <div class="options">
+                                  <p data-value="cherry+marzipan">cherry + marzipan</p>
+                                  <p data-value="blackcurrant_freesia">Blackcurrant leaf - Top note Freesia, May rose - Heart notes Woody accord, Patchouli, Vanilla - Base notes</p>
+                                </div>
+                              </div>
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="svgs/like.svg" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="product">
+                <img src="imgs/2.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle with Pheromones
+                        </li>
+                        <li class="price">
+                            450 Kč
+                        </li>
+                        <li class="descr">
+                            Your best assistant in getting pleasure. Light the candle - ignite the desire.
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <label>scent:</label>
+                            <select name="" id="">
+                                <option value="berries_merlot_spices">Berries - Top note Merlot, spices</option>
+                                <option value="sweet_cherry_blueberry">Sweet Cherry - Top Note Blueberry, vanilla, coconut</option>
+                                <option value="licorice_almond_grape">Licorice, Almond, Grape, and Red Apple - Top notes Rose, Jasmine - Heart notes Honey, Patchouli, Sandalwood, Blackberry, Musk</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="svgs/like.svg" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="product">
+                <img src="imgs/3.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle with Pheromones
+                        </li>
+                        <li class="price">
+                            450 Kč
+                        </li>
+                        <li class="descr">
+                            Your best assistant in getting pleasure. Light the candle - ignite the desire.
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <label>scent:</label>
+                            <select name="" id="">
+                                <option value="berries_merlot_spices">Berries - Top note Merlot, spices</option>
+                                <option value="licorice_almond_grape">Licorice, Almond, Grape, and Red Apple - Top notes Rose, Jasmine - Heart notes Honey, Patchouli, Sandalwood, Blackberry, Musk</option>
+                                <option value="sweet_cherry_blueberry">Sweet Cherry - Top Note Blueberry, vanilla, coconut</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="svgs/like.svg" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="product">
+                <img src="imgs/4.JPEG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            White matte candle
+                        </li>
+                        <li class="price">
+                            320 Kc
+                        </li>
+                        <li class="descr">
+                            Made from natural wax
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Cherry + Marzipan
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="svgs/like.svg" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="product">
+                <img src="imgs/5.JPEG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Cozy gingerbread candle
+                        </li>
+                        <li class="price">
+                            <select name="" id="" class="price">
+                                <option value="small_size_290">Small size: 290 Kc</option>
+                                <option value="big_size_380">Big size: 380 Kc</option>
+                            </select>
+                        </li>
+                        <li class="descr">
+            
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <label>scent:</label>
+                            <select name="" id="">
+                                <option value="chocolate_brownie">Chocolate Brownie</option>
+                                <option value="orange_christmas_tree">orange + Christmas tree</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="svgs/like.svg" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="product">
+                <img src="imgs/6С.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Cozy gingerbread candle
+                        </li>
+                        <li class="price">
+                            180 Kc
+                        </li>
+                        <li class="descr">
+            
+                        </li>
+                        <li class="color">
+                            <p>color:</p> white
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Chocolate Brownie
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="svgs/like.svg" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="product">
+                <img src="imgs/7.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle
+                        </li>
+                        <li class="price">
+                            390 Kc
+                        </li>
+                        <li class="descr">
+                            Turn Heads. Break Hearts. Leave a Mark. Defy the Rules.
+                            With Seductive Glow, you're the irresistible force no one can ignore.
+                            It's more than a fragrance-it's your secret weapon.
+                            Be the one they can't stop talking about.
+                        </li>
+                        <li class="color">
+                            <label>color:</label>
+                            <select name="" id="">
+                                <option value=" white">white</option>
+                                <option value="green">green</option>
+                                <option value="red">red</option>
+                            </select>
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Light table fragrance - Jableny zavin
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="svgs/like.svg" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product"><img src="imgs/8.JPEG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Pheromones Perfume
+                        </li>
+                        <li class="price">
+                            1200 Kc
+                        </li>
+                        <li class="descr">
+                            Turn Heads. Break Hearts. Leave a Mark. Defy the Rules.
+                            With Seductive Glow, you're the irresistible force no one can ignore.
+                            It's more than a fragrance-it's your secret weapon.
+                            Be the one they can't stop talking about.
+                        </li>
+                        <li class="color">
+
+                        </li>
+                        <li class="scent">
+                            <label>scent:</label>
+                            <select name="" id="">
+                                <option value="1">
+                                    Lavender, Rose, Patchouli - TOP Notes
+                                    Sandalwood, Orange - Heart Notes
+                                    Vanilla, Musk
+                                </option>
+                                <option value="2"> Light table fragrance - Jableny zavin</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="svgs/like.svg" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product">
+                <img src="imgs/9.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            Candle
+                        </li>
+                        <li class="price">
+                            180 Kc
+                        </li>
+                        <li class="descr">
+                            
+                        </li>
+                        <li class="color">
+                            <label>color:</label>
+                            <select name="" id="">
+                                <option value=" white">white</option>
+                                <option value="green">green</option>
+                                <option value="red">red</option>
+                            </select>
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Light table fragrance: strawberry milk
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="svgs/like.svg" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product">
+                <img src="imgs/10.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            White Candle
+                        </li>
+                        <li class="price">
+                            220 Kc
+                        </li>
+                        <li class="descr">
+                            
+                        </li>
+                        <li class="color">
+                            <p>color:</p>  white
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Strawberry milk
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="svgs/like.svg" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+            <li class="product">
+                <img src="imgs/11.JPG" alt="">
+                <div class="wrapper">
+                    <ul class="criterias">
+                        <li class="name">
+                            White Candle
+                        </li>
+                        <li class="price">
+                            250 Kc
+                        </li>
+                        <li class="descr">
+                            
+                        </li>
+                        <li class="color">
+                            <label>color:</label>
+                            <select name="" id="">
+                                <option value=" white">white</option>
+                                <option value="green">green</option>
+                                <option value="red">red</option>
+                            </select>
+                        </li>
+                        <li class="scent">
+                            <p>scent:</p>
+                            Cappuccino
+                        </li>
+                    </ul>
+                    <div class="wrapper__btns">
+                        <button class="like" onclick="addToFavorites(this)">
+                            <img src="svgs/like.svg" alt="" class="heart">
+                        </button>
+                        <button class="bascket" onclick="addToBasket(this)">Add to orders</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+            <p class="text">More about us:</p>
+            <div class="wrapper">
+                <a href="https://www.tiktok.com/@seductive.glow?_t=ZN-8s9kpTVEhFe&_r=1">
+                    <img src="svgs/tiktok.svg" alt="tikTok">
+                </a>
+                <a href="https://www.instagram.com/sglow.candles?igsh=MXg2emczZHZtd2dwOA%3D%3D">
+                    <img src="svgs/instagram.svg" alt="instagram">
+                </a>
+                <a href="">
+                    <img src="svgs/facebook.svg" alt="facebook">
+                </a>
+                <a href="">
+                    <img src="svgs/gmail.svg" alt="gmail">
+                </a>
+            </div>
+            <p class="firm">©«Seductive.Glow, 2025»</p>
+    </footer>
+
+    <script src="index.js"></script>
+    <script src="bascket.js"></script>
+    <!-- <script src="favorites.js"></script> -->
+    
+</body>
+</html>

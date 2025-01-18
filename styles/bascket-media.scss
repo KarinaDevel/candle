@@ -36,7 +36,6 @@ $hover: rgba(0, 0, 0, 0.374);
         h1 {
             font-size: 20px;
         }
-
     }
 
     .orders {
@@ -63,61 +62,13 @@ $hover: rgba(0, 0, 0, 0.374);
         display: flex;
         justify-content: center;
 
-        .burger-menu {
-            display: block;
-            position: absolute;
-            z-index: 40;
-            top: 20px;
-            left: 20px;
-
-            img {
-                height: 30px;
-                width: 30px;
-            }
-        }
-
         h1 {
-            font-size: 30px;
+            font-size: 20px;
             margin-left: 0;
             padding-top: 70px;
 
         }
 
-        ul {
-            margin-left: 0;
-            padding: 30px;
-            padding-top: 150px;
-            gap: 10px;
-            width: 100%;
-            // setting
-            font-size: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-color: white;
-            position: fixed;
-            top: 0;
-            left: -100%;
-            /* Скрыто слева */
-            height: 100%;
-            transition: left 0.3s ease;
-            /* Плавное движение меню */
-
-            &.active{
-                left: 0;
-            }
-            img {
-                display: none;
-            }
-        }
-
-        // .sing-in__container{
-
-        // }
-        p:hover, button:hover{
-            color: $hover;
-        }
     }
 
     .orders {
@@ -131,11 +82,7 @@ $hover: rgba(0, 0, 0, 0.374);
 
     footer {
         gap: 10px;
-        padding: 30px 150px;
+        padding: 30px;
         font-size: 16px;
-        
     }
 }
-// @media (min-width: 325px) and (max-width: 450px){
-
-// }

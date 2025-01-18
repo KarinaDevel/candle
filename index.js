@@ -1,3 +1,10 @@
+document.querySelector('.burger-menu').addEventListener('click', function() {
+    // Переключение состояния бургер-меню и анимации
+    this.classList.toggle('active');
+    // Переключение видимости меню
+    document.querySelector('ul').classList.toggle('active');
+});
+
 let users = [];
 
 if (localStorage.getItem("users")) {
@@ -205,18 +212,19 @@ function addToFavorites(button) {
         }
 
         alert('Product added to favorites!');
-    } else {
-        // Товар уже в избранном - удаляем его
-        favorites = favorites.filter(product => product.name !== name || product.price !== price); // Удаляем товар по имени и цене
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-
-        // Меняем цвет сердца на обычный
-        if (heartIcon) {
-            heartIcon.src = "svgs/like.svg"; // Путь к обычному изображению сердца
-        }
-
-        alert('Product removed from favorites!');
     }
+    // } else {
+    //     // Товар уже в избранном - удаляем его
+    //     favorites = favorites.filter(product => product.name !== name || product.price !== price || product.scent !==scent); // Удаляем товар по имени и цене
+    //     localStorage.setItem('favorites', JSON.stringify(favorites));
+
+    //     // Меняем цвет сердца на обычный
+    //     if (heartIcon) {
+    //         heartIcon.src = "svgs/like.svg"; // Путь к обычному изображению сердца
+    //     }
+
+    //     alert('Product removed from favorites!');
+    // }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -268,4 +276,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+const burgerMenu = document.getElementById('burger-menu');
+const menu = document.getElementById('menu');
 
+// Переключение состояния бургер-меню и отображение/скрытие меню
+burgerMenu.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+
+
+
+const customSelect = document.getElementById('customSelect');
+const selectedOption = document.getElementById('selectedOption');
+const options = customSelect.querySelector('.options');
+const optionItems = options.querySelectorAll('p');
+
+// Открытие и закрытие списка
+customSelect.addEventListener('click', (e) => {
+  // Чтобы предотвратить закрытие, если клик был внутри списка
+  e.stopPropagation();
+  customSelect.classList.toggle('open');
+});
+
+// Обработка выбора опции
+optionItems.forEach(item => {
+  item.addEventListener('click', () => {
+    selectedOption.textContent = item.textContent;
+    customSelect.classList.remove('open');
+  });
+});
+
+// Закрытие списка при клике вне элемента
+document.addEventListener('click', (e) => {
+  if (!customSelect.contains(e.target)) {
+    customSelect.classList.remove('open');
+  }
+});

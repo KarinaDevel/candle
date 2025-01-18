@@ -89,6 +89,35 @@ header {
                     opacity: 1;
                     /* Полная видимость при наведении */
                 }
+                @media (min-width: 1025px) and (max-width: 1440px) {
+                    padding: 15px;
+                    max-height: 90px;
+                }
+    
+                @media (min-width: 768px) and (max-width: 1024px) {
+                    box-shadow: none;
+                    padding: 20px;
+                    max-height: 100px;
+                    overflow: hidden;
+                    &:hover {
+                        max-height: 1000px;
+                        /* Достаточно большое значение для анимации */
+                        opacity: 1;
+        
+                    }
+                }
+                @media (min-width: 325px) and (max-width: 768px){
+                    box-shadow: none;
+                    padding: 20px;
+                    max-height: 100px;
+                    overflow: hidden;
+                    &:hover {
+                        max-height: 1000px;
+                        /* Достаточно большое значение для анимации */
+                        opacity: 1;
+        
+                    }
+                }
             }
 
             .criterias {
@@ -117,6 +146,10 @@ header {
                 .name {
                     font-weight: bold;
                     font-size: 20px;
+                    @media (min-width: 768px) and (max-width: 1024px) {
+                        min-width: 100%;
+                        font-size: 18px;
+                    }
                 }
 
                 .price {
@@ -137,6 +170,9 @@ header {
                     opacity: 0;
                     /* Скрыто по умолчанию */
                     transition: opacity 0.5s ease;
+                    @media (min-width: 768px) and (max-width: 1024px) {
+                        opacity: 1;
+                    }
                 }
 
 
@@ -160,6 +196,11 @@ header {
                     border: none;
                     outline: none;
 
+                }
+
+                @media (min-width: 768px) and (max-width: 1024px) {
+                    opacity: 1;
+                    gap: 15px;
                 }
 
 
