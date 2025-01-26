@@ -17,12 +17,12 @@
             <img src="./svgs/hamburger-menu-svgrepo-com.svg" alt="">
         </div>
         <h1>Seductive.Glow</h1>
-    <div id="menu">
-        <ul>
-            <li id="">Log in</li>
-            <li><button class="sing-in" onclick="openSingIn()">Sing in</button></li>
-        </ul>
-    </div>
+        <div id="menu">
+            <ul>
+                <li id="">Log in</li>
+                <li><button class="sing-in" onclick="openSingIn()">Sing in</button></li>
+            </ul>
+        </div>
         <form class="sing-in__container" id="singInContr">
             <input type="text" placeholder="name" id="nameInp">
             <input type="email" placeholder="email" id="email">
@@ -47,23 +47,32 @@
                             Candle with Pheromones
                         </li>
                         <li class="price">
-                            480 Kč
+                            <select name="" id="" class="price">
+                                <option value="">480 Kč</option>
+                            </select>
                         </li>
                         <li class="descr">
                             Your best assistant in getting pleasure. Light the candle - ignite the desire
                         </li>
                         <li class="color">
-                            <p>color:</p> red
+                            <p  class="color">color:</p>
+                            <select name="" id="">
+                                <option value="">red</option>
+                            </select>
                         </li>
                         <li class="scent">
-                            <label>scent:</label>
-                            <div class="custom-select" id="customSelect">
-                                <p id="selectedOption">Выберите опцию</p>
-                                <div class="options">
-                                  <p data-value="cherry+marzipan">cherry + marzipan</p>
-                                  <p data-value="blackcurrant_freesia">Blackcurrant leaf - Top note Freesia, May rose - Heart notes Woody accord, Patchouli, Vanilla - Base notes</p>
-                                </div>
-                              </div>
+                            <p class="scent-label">scents:</p>
+                            <p class="down-space">1. cherry + marzipan</p>
+                            <p class="down-space">2. Blackcurrant leaf - Top note Freesia, May rose - Heart notes Woody
+                                accord, Patchouli,
+                                Vanilla - Base notes</p>
+                            <div class="scents__contain">
+                                <label class="scent-label">Your choise:</label>
+                                <select name="" id="">
+                                    <option value="cherry + marzipan">cherry + marzipan</option>
+                                    <option value="Blackcurrant leaf">Blackcurrant leaf</option>
+                                </select>
+                            </div>
                         </li>
                     </ul>
                     <div class="wrapper__btns">
@@ -74,7 +83,7 @@
                     </div>
                 </div>
             </li>
-            
+
             <li class="product">
                 <img src="imgs/2.JPG" alt="">
                 <div class="wrapper">
@@ -83,21 +92,35 @@
                             Candle with Pheromones
                         </li>
                         <li class="price">
-                            450 Kč
+                            <select name="" id="" class="price">
+                                <option value="">450 Kč</option>
+                            </select>
                         </li>
                         <li class="descr">
                             Your best assistant in getting pleasure. Light the candle - ignite the desire.
                         </li>
                         <li class="color">
-                            <p>color:</p> white
+                            <p  class="color">color:</p>
+                            <select name="" id="">
+                                <option value="">white</option>
+                            </select>
                         </li>
                         <li class="scent">
-                            <label>scent:</label>
-                            <select name="" id="">
-                                <option value="berries_merlot_spices">Berries - Top note Merlot, spices</option>
-                                <option value="sweet_cherry_blueberry">Sweet Cherry - Top Note Blueberry, vanilla, coconut</option>
-                                <option value="licorice_almond_grape">Licorice, Almond, Grape, and Red Apple - Top notes Rose, Jasmine - Heart notes Honey, Patchouli, Sandalwood, Blackberry, Musk</option>
-                            </select>
+                            <p class="scent-label">scents:</p>
+                            <p class="down-space">1. Berries - Top note Merlot, spices</p>
+                            <p class="down-space">2. Sweet Cherry - Top Note Blueberry, vanilla, coconut</p>
+                            <p class="down-space">3. Licorice, Almond, Grape, and Red Apple - Top notes
+                                Rose, Jasmine - Heart notes Honey, Patchouli, Sandalwood, Blackberry, Musk</p>
+                            <div class="scents__contain">
+                                <label class="scent-label">Your choise:</label>
+                                <select name="" id="">
+                                    <option value="Berries">Berries</option>
+                                    <option value="Sweet_Cherry">Sweet Cherry</option>
+                                    <option value="licorice_almond_grape">
+                                        Licorice, Almond, Grape, Red Apple
+                                    </option>
+                                </select>
+                            </div>
                         </li>
                     </ul>
                     <div class="wrapper__btns">
@@ -108,7 +131,7 @@
                     </div>
                 </div>
             </li>
-            
+
             <li class="product">
                 <img src="imgs/3.JPG" alt="">
                 <div class="wrapper">
@@ -117,21 +140,34 @@
                             Candle with Pheromones
                         </li>
                         <li class="price">
-                            450 Kč
+                            <select name="" id="" class="price">
+                                <option value="">450 Kč</option>
+                            </select>
                         </li>
                         <li class="descr">
                             Your best assistant in getting pleasure. Light the candle - ignite the desire.
                         </li>
                         <li class="color">
-                            <p>color:</p> white
+                            <p class="color">color:</p>
+                            <select name="" id="">
+                                <option value="">white</option>
+                            </select>
                         </li>
                         <li class="scent">
-                            <label>scent:</label>
-                            <select name="" id="">
-                                <option value="berries_merlot_spices">Berries - Top note Merlot, spices</option>
-                                <option value="licorice_almond_grape">Licorice, Almond, Grape, and Red Apple - Top notes Rose, Jasmine - Heart notes Honey, Patchouli, Sandalwood, Blackberry, Musk</option>
-                                <option value="sweet_cherry_blueberry">Sweet Cherry - Top Note Blueberry, vanilla, coconut</option>
-                            </select>
+                            <p class="scent-label">scents:</p>
+                            <p class="down-space">1. Berries - Top note Merlot, spices</p>
+                            <p class="down-space">2. Licorice, Almond, Grape, and Red Apple - Top notes
+                                Rose, Jasmine - Heart notes Honey, Patchouli, Sandalwood, Blackberry, Musk</p>
+                            <p class="down-space">3. Sweet Cherry - Top Note Blueberry, vanilla,
+                                coconut</p>
+                            <div class="scents__contain">
+                                <label class="scent-label">Your choise:</label>
+                                <select name="" id="">
+                                    <option value="berries_merlot_spices">Berries</option>
+                                    <option value="licorice_almond_grape">Licorice, Almond, Grape, Red Apple</option>
+                                    <option value="sweet_cherry_blueberry">Sweet Cherry </option>
+                                </select>
+                            </div>
                         </li>
                     </ul>
                     <div class="wrapper__btns">
@@ -142,7 +178,7 @@
                     </div>
                 </div>
             </li>
-            
+
             <li class="product">
                 <img src="imgs/4.JPEG" alt="">
                 <div class="wrapper">
@@ -151,17 +187,28 @@
                             White matte candle
                         </li>
                         <li class="price">
-                            320 Kc
+                            <select name="" id="" class="price">
+                                <option value="">320 Kč</option>
+                            </select>
                         </li>
                         <li class="descr">
                             Made from natural wax
                         </li>
                         <li class="color">
-                            <p>color:</p> white
+                            <p  class="color">color:</p>
+                            <select name="" id="">
+                                <option value="">white</option>
+                            </select>
                         </li>
                         <li class="scent">
-                            <p>scent:</p>
-                            Cherry + Marzipan
+                            <p class="scent-label">scents:</p>
+                            <p class="down-space">1. cherry + marzipan</p>
+                            <div class="scents__contain">
+                                <label class="scent-label">Your choise:</label>
+                                <select name="" id="">
+                                    <option value="cherry + marzipan">cherry + marzipan</option>
+                                </select>
+                            </div>
                         </li>
                     </ul>
                     <div class="wrapper__btns">
@@ -172,7 +219,7 @@
                     </div>
                 </div>
             </li>
-            
+
             <li class="product">
                 <img src="imgs/5.JPEG" alt="">
                 <div class="wrapper">
@@ -181,23 +228,29 @@
                             Cozy gingerbread candle
                         </li>
                         <li class="price">
-                            <select name="" id="" class="price">
-                                <option value="small_size_290">Small size: 290 Kc</option>
-                                <option value="big_size_380">Big size: 380 Kc</option>
+                            <select name="" id="" class="price sm-bg-price">
+                                <option value="small_size_290">Small size: 290 Kč</option>
+                                <option value="big_size_380">Big size: 380 Kč</option>
                             </select>
                         </li>
                         <li class="descr">
-            
+
                         </li>
                         <li class="color">
-                            <p>color:</p> white
+                            <p class="color">color:</p>
+                            <select name="" id="">
+                                <option value="">white</option>
+                            </select>
                         </li>
                         <li class="scent">
-                            <label>scent:</label>
+                            <p class="scent-label">scents:</p>
+                            <div class="scents__contain">
+                            <label class="scent-label">Your choise:</label>
                             <select name="" id="">
                                 <option value="chocolate_brownie">Chocolate Brownie</option>
                                 <option value="orange_christmas_tree">orange + Christmas tree</option>
                             </select>
+                            </div>
                         </li>
                     </ul>
                     <div class="wrapper__btns">
@@ -208,7 +261,7 @@
                     </div>
                 </div>
             </li>
-            
+
             <li class="product">
                 <img src="imgs/6С.JPG" alt="">
                 <div class="wrapper">
@@ -217,17 +270,27 @@
                             Cozy gingerbread candle
                         </li>
                         <li class="price">
-                            180 Kc
+                            <select name="" id="" class="price">
+                                <option value="">180 Kč</option>
+                            </select>
                         </li>
                         <li class="descr">
-            
+
                         </li>
                         <li class="color">
-                            <p>color:</p> white
+                            <p class="color">color:</p>
+                            <select name="" id="">
+                                <option value="">white</option>
+                            </select>
                         </li>
                         <li class="scent">
-                            <p>scent:</p>
-                            Chocolate Brownie
+                            <p class="scent-label">scents:</p>
+                            <div class="scents__contain">
+                            <label class="scent-label">Your choise:</label>
+                            <select name="" id="">
+                                <option value="Chocolate_Brownie">Chocolate Brownie</option>
+                            </select>
+                            </div>
                         </li>
                     </ul>
                     <div class="wrapper__btns">
@@ -238,7 +301,7 @@
                     </div>
                 </div>
             </li>
-            
+
             <li class="product">
                 <img src="imgs/7.JPG" alt="">
                 <div class="wrapper">
@@ -247,7 +310,9 @@
                             Candle
                         </li>
                         <li class="price">
-                            390 Kc
+                            <select name="" id="" class="price">
+                                <option value="">390 Kč</option>
+                            </select>
                         </li>
                         <li class="descr">
                             Turn Heads. Break Hearts. Leave a Mark. Defy the Rules.
@@ -256,7 +321,7 @@
                             Be the one they can't stop talking about.
                         </li>
                         <li class="color">
-                            <label>color:</label>
+                            <p class="color">color:</p>
                             <select name="" id="">
                                 <option value=" white">white</option>
                                 <option value="green">green</option>
@@ -264,8 +329,14 @@
                             </select>
                         </li>
                         <li class="scent">
-                            <p>scent:</p>
-                            Light table fragrance - Jableny zavin
+                            <p class="scent-label">scents:</p>
+                            <p class="down-space">1. Light table fragrance - Jableny zavin</p>
+                            <div class="scents__contain">
+                            <label class="scent-label">Your choise:</label>
+                            <select name="" id="">
+                                <option value="Jableny_zavin">Jableny zavin</option>
+                            </select>
+                            </div>
                         </li>
                     </ul>
                     <div class="wrapper__btns">
@@ -283,7 +354,9 @@
                             Pheromones Perfume
                         </li>
                         <li class="price">
-                            1200 Kc
+                            <select name="" id="" class="price">
+                                <option value="">1200 Kč</option>
+                            </select>
                         </li>
                         <li class="descr">
                             Turn Heads. Break Hearts. Leave a Mark. Defy the Rules.
@@ -295,15 +368,17 @@
 
                         </li>
                         <li class="scent">
-                            <label>scent:</label>
-                            <select name="" id="">
-                                <option value="1">
-                                    Lavender, Rose, Patchouli - TOP Notes
-                                    Sandalwood, Orange - Heart Notes
-                                    Vanilla, Musk
-                                </option>
-                                <option value="2"> Light table fragrance - Jableny zavin</option>
-                            </select>
+                            <p class="scent-label">scents:</p>
+                                <p class="down-space"> 1. Lavender, Rose, Patchouli - TOP Notes Sandalwood, Orange - Heart Notes Vanilla, Musk
+                                </p>
+                                <p class="down-space">2. Light table fragrance - Jableny zavin</p>
+                                <div class="scents__contain">
+                                    <label class="scent-label">Your choise:</label>
+                                    <select name="" id="">
+                                        <option value="Lavender_Rose_Patchouli">Lavender, Rose, Patchouli</option>
+                                        <option value="Jableny_zavin">Jableny zavin</option>
+                                    </select>
+                                </div>
                         </li>
                     </ul>
                     <div class="wrapper__btns">
@@ -322,13 +397,15 @@
                             Candle
                         </li>
                         <li class="price">
-                            180 Kc
+                            <select name="" id="" class="price">
+                                <option value="">180 Kč</option>
+                            </select>
                         </li>
                         <li class="descr">
-                            
+
                         </li>
                         <li class="color">
-                            <label>color:</label>
+                            <p class="color">color:</p>
                             <select name="" id="">
                                 <option value=" white">white</option>
                                 <option value="green">green</option>
@@ -336,8 +413,14 @@
                             </select>
                         </li>
                         <li class="scent">
-                            <p>scent:</p>
-                            Light table fragrance: strawberry milk
+                            <p class="scent-label">scents:</p>
+                            <p class="down-space">Light table fragrance: Strawberry Milk</p>
+                            <div class="scents__contain">
+                                <label class="scent-label">Your choise:</label>
+                                <select name="" id="">
+                                    <option value="strawberry_milk">Strawberry Milk</option>
+                                </select>
+                                </div>
                         </li>
                     </ul>
                     <div class="wrapper__btns">
@@ -356,17 +439,28 @@
                             White Candle
                         </li>
                         <li class="price">
-                            220 Kc
+                            <select name="" id="" class="price">
+                                <option value="">220 Kč</option>
+                            </select>
                         </li>
                         <li class="descr">
-                            
+
                         </li>
                         <li class="color">
-                            <p>color:</p>  white
+                            <p class="color">color:</p>
+                            <select name="" id="" >
+                                <option value="">white</option>
+                            </select>
                         </li>
                         <li class="scent">
-                            <p>scent:</p>
-                            Strawberry milk
+                            <p class="scent-label">scents:</p>
+                            <p class="down-space">Light table fragrance: Strawberry Milk</p>
+                            <div class="scents__contain">
+                                <label class="scent-label">Your choise:</label>
+                                <select name="" id="">
+                                    <option value="strawberry_milk">Strawberry Milk</option>
+                                </select>
+                                </div>
                         </li>
                     </ul>
                     <div class="wrapper__btns">
@@ -385,13 +479,15 @@
                             White Candle
                         </li>
                         <li class="price">
-                            250 Kc
+                            <select name="" id="" class="price">
+                                <option value="">250 Kč</option>
+                            </select>
                         </li>
                         <li class="descr">
-                            
+
                         </li>
                         <li class="color">
-                            <label>color:</label>
+                            <p  class="color">color:</p>
                             <select name="" id="">
                                 <option value=" white">white</option>
                                 <option value="green">green</option>
@@ -399,8 +495,13 @@
                             </select>
                         </li>
                         <li class="scent">
-                            <p>scent:</p>
-                            Cappuccino
+                            <p class="scent-label">scents:</p>
+                            <div class="scents__contain">
+                                <label class="scent-label">Your choise:</label>
+                                <select name="" id="">
+                                    <option value="capuccino">Capuccino</option>
+                                </select>
+                                </div>
                         </li>
                     </ul>
                     <div class="wrapper__btns">
@@ -415,27 +516,28 @@
     </section>
 
     <footer>
-            <p class="text">More about us:</p>
-            <div class="wrapper">
-                <a href="https://www.tiktok.com/@seductive.glow?_t=ZN-8s9kpTVEhFe&_r=1">
-                    <img src="svgs/tiktok.svg" alt="tikTok">
-                </a>
-                <a href="https://www.instagram.com/sglow.candles?igsh=MXg2emczZHZtd2dwOA%3D%3D">
-                    <img src="svgs/instagram.svg" alt="instagram">
-                </a>
-                <a href="">
-                    <img src="svgs/facebook.svg" alt="facebook">
-                </a>
-                <a href="">
-                    <img src="svgs/gmail.svg" alt="gmail">
-                </a>
-            </div>
-            <p class="firm">©«Seductive.Glow, 2025»</p>
+        <p class="text">More about us:</p>
+        <div class="wrapper">
+            <a href="https://www.tiktok.com/@seductive.glow?_t=ZN-8s9kpTVEhFe&_r=1">
+                <img src="svgs/tiktok.svg" alt="tikTok">
+            </a>
+            <a href="https://www.instagram.com/sglow.candles?igsh=MXg2emczZHZtd2dwOA%3D%3D">
+                <img src="svgs/instagram.svg" alt="instagram">
+            </a>
+            <a href="">
+                <img src="svgs/facebook.svg" alt="facebook">
+            </a>
+            <a href="">
+                <img src="svgs/gmail.svg" alt="gmail">
+            </a>
+        </div>
+        <p class="firm">©«Seductive.Glow, 2025»</p>
     </footer>
 
     <script src="index.js"></script>
     <script src="bascket.js"></script>
     <!-- <script src="favorites.js"></script> -->
-    
+
 </body>
+
 </html>

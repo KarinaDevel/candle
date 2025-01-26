@@ -52,7 +52,10 @@ header {
         margin-left: 700px;
         gap: 30px;
 
-        @media (min-width: 1223px) and (max-width: 1440px) {
+        @media (min-width: 1300px) and (max-width: 1440px){
+            margin-left: 950px;
+        }
+        @media (min-width: 1223px) and (max-width: 1300px) {
             margin-left: 700px;
             padding-top: 20px;
         }
@@ -257,7 +260,11 @@ header {
                 color: rgba(128, 128, 128, 0.485);
                 font-size: 20px;
                 font-weight: bold;
+                padding-left: 20%;
 
+            }
+            .sm-bg-price{
+                padding-left: 0;
             }
 
             .descr {
@@ -278,10 +285,30 @@ header {
             }
 
 
-            p {
-                padding-right: 8px;
-                font-weight: bold;
+            // .scent-label {
+            //     padding-right: 8px;
+            //     font-weight: bold;
+            // }
+            .scent{
+                flex-direction: column;
+                .scent-label{
+                    font-weight: bold;
+                }
+                p{
+                    font-weight: 100;
+                }
+                .down-space{
+                    margin-bottom: 10px;
+                }
+                .scents__contain{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                }
             }
+            // .color{
+            //     font-weight: bold;
+            // }
         }
 
         .wrapper__btns {
@@ -370,53 +397,5 @@ footer {
         justify-content: center;
         gap: 10px;
         padding-bottom: 20px;
-    }
-}
-
-.custom-select {
-    position: relative;
-    width: 200px;
-    border-bottom: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-
-    #selectedOption {
-        padding-left: 7px;
-        background-color: #f9f9f9;
-        text-align: left;
-        border: none;
-        cursor: pointer;
-        color: #333;
-        font-weight: 500;
-    }
-
-    .options {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        max-height: 150px;
-        overflow-y: auto;
-        z-index: 10000000000000000000000000000000000000000000;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        p {
-            padding: 10px;
-            cursor: pointer;
-
-            &:hover {
-                background-color: #f1f1f1;
-            }
-        }
-    }
-
-    &.open .options {
-        display: block;
     }
 }

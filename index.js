@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-
+// Добавление в избранное
 function addToFavorites(button) {
     // Проверка, если пользователь не авторизован
     const currentUser = localStorage.getItem("currentUser");
@@ -213,22 +213,10 @@ function addToFavorites(button) {
 
         alert('Product added to favorites!');
     }
-    // } else {
-    //     // Товар уже в избранном - удаляем его
-    //     favorites = favorites.filter(product => product.name !== name || product.price !== price || product.scent !==scent); // Удаляем товар по имени и цене
-    //     localStorage.setItem('favorites', JSON.stringify(favorites));
-
-    //     // Меняем цвет сердца на обычный
-    //     if (heartIcon) {
-    //         heartIcon.src = "svgs/like.svg"; // Путь к обычному изображению сердца
-    //     }
-
-    //     alert('Product removed from favorites!');
-    // }
 }
 
+// Инициализация состояния кнопок при загрузке страницы
 document.addEventListener("DOMContentLoaded", () => {
-    // Получаем список избранных товаров из localStorage
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
     // Находим все кнопки "like" на странице
@@ -243,14 +231,12 @@ document.addEventListener("DOMContentLoaded", () => {
             return;  // Если одного из элементов нет, пропускаем итерацию
         }
 
-        // Получаем информацию о товаре, проверяя наличие каждого элемента
         const nameElement = productElement.querySelector('.name');
         const priceElement = productElement.querySelector('.price');
         const descrElement = productElement.querySelector('.descr');
         const colorElement = productElement.querySelector('.color');
         const scentElement = productElement.querySelector('.scent');
 
-        // Проверяем, что все необходимые элементы существуют
         if (!nameElement || !priceElement || !descrElement || !colorElement || !scentElement) {
             console.error("One or more product details are missing");
             return;
@@ -262,53 +248,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const color = colorElement.textContent;
         const scent = scentElement.textContent.trim();
 
-        // Теперь проверяем наличие всех параметров товара, включая запах
         const isProductInFavorites = favorites.some(product =>
             product.name === name &&
             product.price === price &&
-            product.scent === scent // Добавляем запах в проверку
+            product.scent === scent
         );
 
-        // Если товар в избранном, меняем цвет сердца на красный
         if (isProductInFavorites) {
             heartIcon.src = "svgs/like-red.svg";  // Меняем на красное сердце
         }
     });
-});
-
-const burgerMenu = document.getElementById('burger-menu');
-const menu = document.getElementById('menu');
-
-// Переключение состояния бургер-меню и отображение/скрытие меню
-burgerMenu.addEventListener('click', () => {
-    menu.classList.toggle('active');
-});
-
-
-
-const customSelect = document.getElementById('customSelect');
-const selectedOption = document.getElementById('selectedOption');
-const options = customSelect.querySelector('.options');
-const optionItems = options.querySelectorAll('p');
-
-// Открытие и закрытие списка
-customSelect.addEventListener('click', (e) => {
-  // Чтобы предотвратить закрытие, если клик был внутри списка
-  e.stopPropagation();
-  customSelect.classList.toggle('open');
-});
-
-// Обработка выбора опции
-optionItems.forEach(item => {
-  item.addEventListener('click', () => {
-    selectedOption.textContent = item.textContent;
-    customSelect.classList.remove('open');
-  });
-});
-
-// Закрытие списка при клике вне элемента
-document.addEventListener('click', (e) => {
-  if (!customSelect.contains(e.target)) {
-    customSelect.classList.remove('open');
-  }
 });

@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             <li class="name">${product.name}</li>
                             <li class="price">${product.price}</li>
                             <li class="descr">${product.descr}</li>
-                            <li class="color"><p>color:</p> ${product.color}</li>
-                            <li class="scent"><p>scent:</p> ${product.scent}</li>
+                            <li class="color"><p>Color:</p> ${product.color}</li>
+                            <li class="scent"><p>Scent:</p> ${product.scent}</li>
                         </ul>
                         <div class="wrapper__btns">
                             <button class="remove-from-basket" onclick="removeFromBasket(this)">
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 100); // Задержка в 100 миллисекунд
 });
 
-// Функция для добавления товара в корзину
+
 function addToBasket(button) {
     const currentUser = localStorage.getItem("currentUser");
 
@@ -63,10 +63,19 @@ function addToBasket(button) {
     const id = `product-${Date.now()}`;  // Генерируем уникальный id на основе временной метки
     const name = productElement.querySelector('.name').textContent;
     const image = productElement.querySelector('img').getAttribute('src');
-    const price = productElement.querySelector('.price').textContent;
+    
+    // Получаем текущую цену из выбранного значения в select (если есть select)
+    const priceElement = productElement.querySelector('.price select');
+    const price = priceElement ? priceElement.options[priceElement.selectedIndex].text : productElement.querySelector('.price').textContent.trim();
+
     const descr = productElement.querySelector('.descr').textContent;
-    const color = productElement.querySelector('.color').textContent;
-    const scent = productElement.querySelector('.scent').textContent.trim();
+
+    // Получаем выбранный цвет и запах
+    const colorElement = productElement.querySelector('.color select');
+    const color = colorElement ? colorElement.options[colorElement.selectedIndex].text : 'Not specified';  // Если color select пустой, то 'Not specified'
+
+    const scentElement = productElement.querySelector('.scents__contain select');
+    const scent = scentElement ? scentElement.options[scentElement.selectedIndex].text : 'Not specified';  // Если scent select пустой, то 'Not specified'
 
     // Получаем список товаров в корзине из localStorage
     let basket = JSON.parse(localStorage.getItem('basket')) || [];

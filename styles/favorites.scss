@@ -9,6 +9,11 @@ body {
     min-height: 100vh;
     font-family: $whole-text;
 }
+select{
+    outline: 0;
+    border: 0;
+}
+
 
 header {
 
@@ -139,7 +144,26 @@ header {
                     color: rgba(128, 128, 128, 0.485);
                     font-size: 20px;
                     font-weight: bold;
-
+                }
+                .sm-bg-price{
+                    padding-left: 0;
+                }
+                .scent{
+                    flex-direction: column;
+                    .scent-label{
+                        font-weight: bold;
+                    }
+                    p{
+                        font-weight: 100;
+                    }
+                    .down-space{
+                        margin-bottom: 10px;
+                    }
+                    .scents__contain{
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                    }
                 }
 
                 .descr {
@@ -159,10 +183,10 @@ header {
                 }
 
 
-                p {
-                    padding-right: 8px;
-                    font-weight: bold;
-                }
+                // p {
+                //     padding-right: 8px;
+                //     font-weight: bold;
+                // }
             }
 
             .wrapper__btns {
