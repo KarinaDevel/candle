@@ -160,7 +160,6 @@ document.addEventListener('DOMContentLoaded', function () {
         updateUIForLogout();
     }
 });
-
 // Добавление в избранное
 function addToFavorites(button) {
     // Проверка, если пользователь не авторизован
@@ -185,16 +184,25 @@ function addToFavorites(button) {
 
     const name = productElement.querySelector('.name').textContent;
     const image = productElement.querySelector('img').getAttribute('src');
-    const price = productElement.querySelector('.price').textContent;
     const descr = productElement.querySelector('.descr').textContent;
-    const color = productElement.querySelector('.color').textContent;
-    const scent = productElement.querySelector('.scent').textContent.trim();
+
+    // Получаем опции из селектов, с проверками на существование
+    const priceOptions = productElement.querySelector('.price select') 
+        ? Array.from(productElement.querySelector('.price select').children).map(option => option.textContent.trim()) 
+        : ["not specified"]; // Если селект пуст, добавляем "not specified"
+    const colorOptions = productElement.querySelector('.color select') 
+        ? Array.from(productElement.querySelector('.color select').children).map(option => option.textContent.trim()) 
+        : ["not specified"]; // Если селект пуст, добавляем "not specified"
+    const scentDescriptions = Array.from(productElement.querySelectorAll('.scent .down-space')).map(desc => desc.textContent.trim());
+    const scentOptions = productElement.querySelector('.scent select') 
+        ? Array.from(productElement.querySelector('.scent select').children).map(option => option.textContent.trim()) 
+        : ["not specified"]; // Если селект пуст, добавляем "not specified"
 
     // Получаем список избранных товаров из localStorage
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
     // Проверяем, есть ли уже этот товар в избранном
-    const isProductInFavorites = favorites.some(product => product.name === name && product.price === price);
+    const isProductInFavorites = favorites.some(product => product.name === name && product.price === priceOptions[0]);
 
     if (heartIcon && heartIcon.src.includes("like-red.svg")) {
         alert('This product is already in your favorites!');
@@ -203,7 +211,18 @@ function addToFavorites(button) {
 
     if (!isProductInFavorites) {
         // Товар еще не в избранном - добавляем его в начало массива
-        favorites.unshift({ id, name, image, price, descr, color, scent });
+        favorites.unshift({
+            id,
+            name,
+            image,
+            descr,
+            priceOptions,
+            colorOptions,
+            scentDescriptions,
+            scentOptions
+        });
+
+        // Сохраняем данные в localStorage
         localStorage.setItem('favorites', JSON.stringify(favorites));
 
         // Меняем цвет сердца на красный
@@ -214,6 +233,9 @@ function addToFavorites(button) {
         alert('Product added to favorites!');
     }
 }
+
+
+
 
 // Инициализация состояния кнопок при загрузке страницы
 document.addEventListener("DOMContentLoaded", () => {
@@ -257,5 +279,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isProductInFavorites) {
             heartIcon.src = "svgs/like-red.svg";  // Меняем на красное сердце
         }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // Ваш код добавления обработчиков событий
+    document.querySelectorAll('.scent select').forEach(select => {
+        select.addEventListener('change', function () {
+            // Логика изменения описания запаха
+        });
     });
 });
